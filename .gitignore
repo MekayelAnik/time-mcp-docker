@@ -1,0 +1,9 @@
+build_logs
+resources/build_data
+resources/build-timestamp
+resources/build-timestamp.txt
+resources/tag
+Dockerfile.time-mcp
+/.vs
+/Dockerfile.time-mcp
+/Dockerfile
