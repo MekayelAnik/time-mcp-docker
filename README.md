@@ -3,13 +3,13 @@
 
 <div align="left">
 
-<img alt="time-mcp" src="https://img.shields.io/badge/Time-MCP-00A4EF?style=for-the-badge&logo=clock&logoColor=white" width="300">
+<img alt="time-mcp" src="https://img.shields.io/badge/Time-MCP-00E9A3?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiA3TDEyIDEyTDIyIDdMMTIgMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yIDEyTDEyIDE3TDIyIDEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxN0wxMiAyMkwyMiAxNyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+&logoColor=white" width="400">
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/time-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/time-mcp)
 [![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/time-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/time-mcp)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/MekayelAnik/time-mcp-docker/refs/heads/main/LICENSE)
 
-**[NPM Package](https://www.npmjs.com/package/time-mcp)** • **[GitHub Repository](https://github.com/mekayelanik/time-mcp-docker)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/time-mcp)**
+**[Official Website](https://npmjs.com/package/time-mcp/)** • **[Documentation](https://github.com/nicholasgriffintn/time-mcp)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/time-mcp)**
 
 </div>
 
@@ -18,58 +18,75 @@
 ## 📋 Table of Contents
 
 - [Overview](#overview)
+- [Supported Architectures](#supported-architectures)
+- [Available Tags](#available-tags)
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
-- [MCP Client Setup](#mcp-client-setup)
-- [Available Tools](#available-tools)
-- [Advanced Usage](#advanced-usage)
+- [MCP Client Configuration](#mcp-client-configuration)
+- [Network Configuration](#network-configuration)
+- [Updating](#updating)
 - [Troubleshooting](#troubleshooting)
-- [Resources & Support](#resources--support)
+- [Additional Resources](#additional-resources)
+- [Support & License](#support--license)
+- [Major Changes](#major-changes)
 
 ---
 
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+<a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+</a>
+</p>
+
 ## Overview
 
-Time MCP Server provides comprehensive time awareness capabilities to AI assistants through the Model Context Protocol. It enables LLMs to accurately handle time-related queries, perform timezone conversions, calculate relative times, and work with timestamps across different locales and timezones.
+Time MCP Server provides time awareness and timezone operation capabilities through the Model Context Protocol. Built on Alpine Linux for minimal footprint and maximum security.
 
 ### Key Features
 
-✨ **Six Powerful Tools** - Current time, relative time, timestamps, and more  
-🌍 **Timezone Support** - Convert and display time across 400+ timezones  
-📅 **Date Calculations** - Days in month, week of year, ISO week numbers  
-⏰ **Relative Time** - Human-readable relative time formatting  
-🚀 **Multiple Protocols** - HTTP, SSE, and WebSocket transport support  
-🌐 **Locale Support** - Format dates in any locale (en-US, fr-FR, etc.)  
-⚡ **High Performance** - Lightweight and optimized for speed  
-🎯 **Zero Dependencies** - No external API keys required  
-🔧 **Highly Customizable** - Configure default timezone and locale  
-📊 **Health Monitoring** - Built-in health check endpoint
+✨ **Multi-Architecture Support** - Native support for x86-64 and ARM64  
+🚀 **Multiple Transport Protocols** - HTTP, SSE, and WebSocket support  
+🔒 **Secure by Design** - Alpine-based with minimal attack surface  
+⚡ **High Performance** - ZSTD compression for faster deployments  
+🎯 **Production Ready** - Stable releases with comprehensive testing  
+🔧 **Easy Configuration** - Simple environment variable setup
 
-### Supported Architectures
+---
 
-| Architecture | Status | Notes |
-|:-------------|:------:|:------|
-| **x86-64** | ✅ Stable | Intel/AMD processors |
-| **ARM64** | ✅ Stable | Raspberry Pi, Apple Silicon |
+## Supported Architectures
 
-### Available Tags
+| Architecture | Tag Prefix | Status |
+|:-------------|:-----------|:------:|
+| **x86-64** | `amd64-<version>` | ✅ Stable |
+| **ARM64** | `arm64v8-<version>` | ✅ Stable |
 
-| Tag | Stability | Use Case |
-|:----|:---------:|:---------|
-| `stable` | ⭐⭐⭐ | **Production (recommended)** |
-| `latest` | ⭐⭐⭐ | Latest stable features |
-| `1.x.x` | ⭐⭐⭐ | Version pinning |
-| `beta` | ⚠️ | Testing only |
+> 💡 Multi-arch images automatically select the correct architecture for your system.
+
+---
+
+## Available Tags
+
+| Tag | Stability | Description | Use Case |
+|:----|:---------:|:------------|:---------|
+| `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
+| `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
+| `1.0.21` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `beta` | ⚠️ | Beta releases | **Testing only** |
+
+### System Requirements
+
+- **Docker Engine:** 23.0+
+- **RAM:** Minimum 512MB
+- **CPU:** Single core sufficient
+
+> 🔒 **CRITICAL:** Do NOT expose this container directly to the internet without proper security measures (reverse proxy, SSL/TLS, authentication, firewall rules).
 
 ---
 
 ## Quick Start
-
-### Prerequisites
-
-- Docker Engine 23.0+
-- Network access (for Docker Hub)
-- No API keys required ✨
 
 ### Docker Compose (Recommended)
 
@@ -82,21 +99,22 @@ services:
     ports:
       - "8060:8060"
     environment:
-      # Optional Configuration
-      - TIME_DEFAULT_TIMEZONE=UTC
-      - TIME_LOCALE=en-US
-      
-      # Server Settings
       - PORT=8060
-      - PROTOCOL=SHTTP
-      - CORS=*
+      - INTERNAL_PORT=38011
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
+      - TZ=Asia/Dhaka
+      - NODE_ENV=production
+      - PROTOCOL=HTTP
+      - ENABLE_HTTPS=false
+      - HTTP_VERSION_MODE=auto
+      # Optional: require Bearer token auth at HAProxy layer
+      # - API_KEY=replace-with-strong-secret
+    hostname: time-mcp
+    domainname: local
 ```
 
 **Deploy:**
-
 ```bash
 docker compose up -d
 docker compose logs -f time-mcp
@@ -109,10 +127,15 @@ docker run -d \
   --name=time-mcp \
   --restart=unless-stopped \
   -p 8060:8060 \
-  -e TIME_DEFAULT_TIMEZONE=UTC \
-  -e TIME_LOCALE=en-US \
   -e PORT=8060 \
-  -e PROTOCOL=SHTTP \
+  -e INTERNAL_PORT=38011 \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Dhaka \
+  -e NODE_ENV=production \
+  -e PROTOCOL=HTTP \
+  -e ENABLE_HTTPS=false \
+  -e HTTP_VERSION_MODE=auto \
   mekayelanik/time-mcp:stable
 ```
 
@@ -120,12 +143,21 @@ docker run -d \
 
 | Protocol | Endpoint | Use Case |
 |:---------|:---------|:---------|
-| **HTTP** | `http://host-ip:8060/mcp` | **Recommended** |
+| **HTTP** | `http://host-ip:8060/mcp` | Best compatibility (recommended) |
 | **SSE** | `http://host-ip:8060/sse` | Real-time streaming |
-| **WebSocket** | `ws://host-ip:8060/message` | Bidirectional |
-| **Health** | `http://host-ip:8060/healthz` | Monitoring |
+| **WebSocket** | `ws://host-ip:8060/message` | Bidirectional communication |
 
-> ⏱️ Server ready in 5-10 seconds after container start
+When HTTPS is enabled (`ENABLE_HTTPS=true`), use TLS endpoints:
+
+| Protocol | Endpoint |
+|:---------|:---------|
+| **SHTTP** | `https://host-ip:8060/mcp` |
+| **SSE** | `https://host-ip:8060/sse` |
+| **WebSocket** | `wss://host-ip:8060/message` |
+
+> ⚠️ **Security Warning:** The container now defaults to HTTP (`ENABLE_HTTPS=false`) for easier local setup. Use `ENABLE_HTTPS=true` for production, public networks, or any untrusted environment.
+>
+> ⏱️ **ARM Devices:** Allow 30-60 seconds for initialization before accessing endpoints.
 
 ---
 
@@ -133,220 +165,150 @@ docker run -d \
 
 ### Environment Variables
 
-#### Optional Settings
-
 | Variable | Default | Description |
 |:---------|:-------:|:------------|
-| `TIME_DEFAULT_TIMEZONE` | `UTC` | Default timezone for operations |
-| `TIME_LOCALE` | `en-US` | Default locale for formatting |
-
-#### Server Configuration
-
-| Variable | Default | Description |
-|:---------|:-------:|:------------|
-| `PORT` | `8060` | Server port (1-65535) |
-| `PROTOCOL` | `SHTTP` | Transport protocol (SHTTP/SSE/WS) |
-| `CORS` | _(none)_ | Cross-Origin configuration |
+| `PORT` | `8060` | Internal server port |
+| `INTERNAL_PORT` | `38011` | Internal MCP server port used by supergateway |
 | `PUID` | `1000` | User ID for file permissions |
 | `PGID` | `1000` | Group ID for file permissions |
-| `TZ` | `UTC` | Container timezone |
-| `DEBUG_MODE` | `false` | Enable debug mode |
+| `TZ` | `Asia/Dhaka` | Container timezone ([TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) |
+| `NODE_ENV` | `production` | Node.js environment |
+| `PROTOCOL` | `SHTTP` | Default transport protocol |
+| `API_KEY` | *(empty)* | Enables Bearer token auth (`Authorization: Bearer <API_KEY>`) |
+| `CORS` | *(empty)* | Comma-separated CORS origins, supports `*` |
+| `ENABLE_HTTPS` | `false` | Enables TLS termination in HAProxy |
+| `TLS_CERT_PATH` | `/etc/haproxy/certs/server.crt` | TLS cert path |
+| `TLS_KEY_PATH` | `/etc/haproxy/certs/server.key` | TLS private key path |
+| `TLS_PEM_PATH` | `/etc/haproxy/certs/server.pem` | Combined PEM file used by HAProxy |
+| `TLS_CN` | `localhost` | CN for auto-generated certificate |
+| `TLS_SAN` | `DNS:<TLS_CN>` | SAN for auto-generated certificate |
+| `TLS_DAYS` | `365` | Auto-generated cert validity period |
+| `TLS_MIN_VERSION` | `TLSv1.3` | Minimum TLS protocol (`TLSv1.2` or `TLSv1.3`) |
+| `HTTP_VERSION_MODE` | `auto` | `auto`, `all`, `h1`, `h2`, `h3`, `h1+h2` |
+| `DEBUG_MODE` | *(empty)* | Enables debug hold mode when set truthy |
 
-### Supported Timezones
+### HTTPS and HTTP Version Notes
 
-Time MCP supports all IANA timezone database entries. Common examples:
+- If `ENABLE_HTTPS=true` and cert files are missing, the container auto-generates a self-signed certificate.
+- If `TLS_CERT_PATH` and `TLS_KEY_PATH` exist, they are merged into `TLS_PEM_PATH` and used directly.
+- `HTTP_VERSION_MODE=h3` (or `auto`) enables HTTP/3 only when HAProxy build includes QUIC; otherwise it safely falls back.
 
-**Americas:** `America/New_York`, `America/Los_Angeles`, `America/Chicago`  
-**Europe:** `Europe/London`, `Europe/Paris`, `Europe/Berlin`  
-**Asia:** `Asia/Tokyo`, `Asia/Shanghai`, `Asia/Dubai`, `Asia/Kolkata`  
-**Pacific:** `Australia/Sydney`, `Pacific/Auckland`
+### API Key Authentication Notes
 
-Full list: [IANA Time Zone Database](https://www.iana.org/time-zones)
+- Set `API_KEY` to enforce authentication at reverse proxy level.
+- Expected header format: `Authorization: Bearer <API_KEY>`.
+- Localhost health checks remain accessible for liveness/readiness.
 
-### Locale Support
+### User & Group IDs
 
-| Locale | Description | Example |
-|:-------|:------------|:--------|
-| `en-US` | English (US) | 12/31/2024, 11:59 PM |
-| `en-GB` | English (UK) | 31/12/2024, 23:59 |
-| `fr-FR` | French | 31/12/2024 23:59 |
-| `bn-BD` | Bangla (Bangladesh) | ৩১/১২/২০২৪ ২৩:৫৯ |
-| `de-DE` | German | 31.12.2024, 23:59 |
-| `ja-JP` | Japanese | 2024/12/31 23:59 |
-| `zh-CN` | Chinese | 2024/12/31 23:59 |
+Find your IDs and set them to avoid permission issues:
 
-### Protocol Configuration
-
-```yaml
-# HTTP/Streamable HTTP (Recommended)
-environment:
-  - PROTOCOL=SHTTP
-
-# Server-Sent Events
-environment:
-  - PROTOCOL=SSE
-
-# WebSocket
-environment:
-  - PROTOCOL=WS
+```bash
+id username
+# uid=1000(user) gid=1000(group)
 ```
 
-### CORS Configuration
+### Timezone Examples
 
 ```yaml
-# Development - Allow all origins
-environment:
-  - CORS=*
-
-# Production - Specific domains
-environment:
-  - CORS=https://example.com,https://app.example.com
-
-# Mixed domains and IPs
-environment:
-  - CORS=https://example.com,192.168.1.100:3000
-```
-
-> ⚠️ **Security:** Never use `CORS=*` in production environments
-
-### Configuration Examples
-
-#### US Eastern Time Setup
-
-```yaml
-environment:
-  - TIME_DEFAULT_TIMEZONE=America/New_York
-  - TIME_LOCALE=en-US
-  - TZ=America/New_York
-```
-
-#### European Setup
-
-```yaml
-environment:
-  - TIME_DEFAULT_TIMEZONE=Europe/Paris
-  - TIME_LOCALE=fr-FR
-  - TZ=Europe/Paris
-```
-
-#### Asia Pacific Setup
-
-```yaml
-environment:
-  - TIME_DEFAULT_TIMEZONE=Asia/Tokyo
-  - TIME_LOCALE=ja-JP
-  - TZ=Asia/Tokyo
+- TZ=Asia/Dhaka        # Bangladesh
+- TZ=America/New_York  # US Eastern
+- TZ=Europe/London     # UK
+- TZ=UTC               # Universal Time
 ```
 
 ---
 
-## MCP Client Setup
+## MCP Client Configuration
 
-### Transport Compatibility
+### Transport Support
 
 | Client | HTTP | SSE | WebSocket | Recommended |
 |:-------|:----:|:---:|:---------:|:------------|
 | **VS Code (Cline/Roo-Cline)** | ✅ | ✅ | ❌ | HTTP |
 | **Claude Desktop** | ✅ | ✅ | ⚠️* | HTTP |
+| **Claude CLI** | ✅ | ✅ | ⚠️* | HTTP |
+| **Codex CLI** | ✅ | ✅ | ⚠️* | HTTP |
+| **Codeium (Windsurf)** | ✅ | ✅ | ⚠️* | HTTP |
 | **Cursor** | ✅ | ✅ | ⚠️* | HTTP |
-| **Windsurf** | ✅ | ✅ | ⚠️* | HTTP |
 
-> ⚠️ *WebSocket support is experimental
+> ⚠️ *WebSocket is experimental ([Issue #1288](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1288))
+
+---
 
 ### VS Code (Cline/Roo-Cline)
 
-Add to `.vscode/settings.json`:
+Configure in `.vscode/settings.json`:
 
 ```json
 {
   "mcp.servers": {
-    "time": {
+    "time-mcp": {
       "url": "http://host-ip:8060/mcp",
-      "transport": "http",
-      "autoApprove": [
-        "current_time",
-        "relative_time",
-        "get_timestamp",
-        "days_in_month",
-        "convert_time",
-        "get_week_year"
-      ]
+      "transport": "http"
     }
   }
 }
 ```
 
-### Claude Desktop
+---
 
-**Config Locations:**
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+### Claude Desktop App/Claude Code
+
+**Configuration:**
+### **With API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp","headers":{"Authorization":"Bearer <YOUR_API_KEY>"}}'
+```
+### **Without API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp"}'
+```
+
+---
+
+### Codex CLI
+
+Configure in `~/.codex/config.json`:
 
 ```json
 {
   "mcpServers": {
-    "time": {
+    "time-mcp": {
       "transport": "http",
-      "url": "http://localhost:8060/mcp"
+      "url": "http://host-ip:8060/mcp"
     }
   }
 }
 ```
+
+---
+
+### Codeium (Windsurf)
+
+Configure in `.codeium/mcp_settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "time-mcp": {
+      "transport": "http",
+      "url": "http://host-ip:8060/mcp"
+    }
+  }
+}
+```
+
+---
 
 ### Cursor
 
-Add to `~/.cursor/mcp.json`:
+Configure in `~/.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
-    "time": {
-      "transport": "http",
-      "url": "http://host-ip:8060/mcp"
-    }
-  }
-}
-```
-
-### Windsurf (Codeium)
-
-Add to `.codeium/mcp_settings.json`:
-
-```json
-{
-  "mcpServers": {
-    "time": {
-      "transport": "http",
-      "url": "http://host-ip:8060/mcp"
-    }
-  }
-}
-```
-
-### Claude Code
-
-Add to `~/.config/claude-code/mcp_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "time": {
-      "transport": "http",
-      "url": "http://localhost:8060/mcp"
-    }
-  }
-}
-```
-
-### GitHub Copilot CLI
-
-Add to `~/.github-copilot/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "time": {
+    "time-mcp": {
       "transport": "http",
       "url": "http://host-ip:8060/mcp"
     }
@@ -356,218 +318,114 @@ Add to `~/.github-copilot/mcp.json`:
 
 ---
 
-## Available Tools
+### Testing Configuration
 
-### ⏰ current_time
-Get current time in UTC and local timezone with comprehensive details including date, time, timezone offset, and formatted timestamps.
-
-**Use Cases:** Display current time, log timestamps, get timezone information, show current date and time
-
-**Example Prompts:**
-- "What time is it now?"
-- "Show me the current time in UTC"
-- "What's the current date and time?"
-
----
-
-### 🕐 relative_time
-Convert absolute timestamps to human-readable relative time expressions (e.g., "2 hours ago", "in 3 days").
-
-**Use Cases:** Display relative timestamps in UI, show "time ago" for posts, calculate time differences, user-friendly time display
-
-**Example Prompts:**
-- "How long ago was January 1, 2024?"
-- "Show relative time for 2 hours ago"
-- "When is 5 days from now in relative terms?"
-
----
-
-### 📅 get_timestamp
-Convert human-readable dates and times to Unix timestamps (milliseconds since epoch).
-
-**Use Cases:** Convert dates to timestamps, database timestamp storage, API timestamp parameters, event scheduling
-
-**Example Prompts:**
-- "Get timestamp for December 25, 2024"
-- "Convert 'tomorrow at 3pm' to timestamp"
-- "What's the Unix timestamp for New Year 2025?"
-
----
-
-### 📆 days_in_month
-Calculate the number of days in any month, accounting for leap years.
-
-**Use Cases:** Calendar calculations, date range validation, monthly scheduling, billing period calculations
-
-**Example Prompts:**
-- "How many days are in February 2024?"
-- "Days in current month"
-- "How many days in December?"
-
----
-
-### 🌍 convert_time
-Convert time between different timezones with full timezone information and DST handling.
-
-**Use Cases:** International meeting scheduling, multi-timezone coordination, travel time planning, global event timing
-
-**Example Prompts:**
-- "Convert 3pm EST to Tokyo time"
-- "What time is 9am UTC in Los Angeles?"
-- "Show 2pm London time in Sydney"
-
----
-
-### 📊 get_week_year
-Get the week number and ISO week number for any date, useful for weekly planning and reporting.
-
-**Use Cases:** Weekly reporting and analytics, project week tracking, ISO week calculations, calendar week identification
-
-**Example Prompts:**
-- "What week of the year is it?"
-- "Get week number for December 25, 2024"
-- "What's the ISO week for today?"
-
----
-
-## Advanced Usage
-
-### Production Configuration
-
-```yaml
-services:
-  time-mcp:
-    image: mekayelanik/time-mcp:stable
-    container_name: time-mcp
-    restart: unless-stopped
-    ports:
-      - "8060:8060"
-    environment:
-      - TIME_DEFAULT_TIMEZONE=UTC
-      - TIME_LOCALE=en-US
-      - PORT=8060
-      - PROTOCOL=SHTTP
-      - CORS=https://app.example.com
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-    
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 256M
-        reservations:
-          cpus: '0.25'
-          memory: 128M
-    
-    healthcheck:
-      test: ["CMD", "nc", "-z", "localhost", "8060"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-```
-
-### Reverse Proxy Setup
-
-#### Nginx
-
-```nginx
-server {
-    listen 80;
-    server_name time.example.com;
-    
-    location / {
-        proxy_pass http://localhost:8060;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        
-        proxy_connect_timeout 60;
-        proxy_send_timeout 60;
-        proxy_read_timeout 60;
-    }
-}
-```
-
-#### Traefik
-
-```yaml
-services:
-  time-mcp:
-    image: mekayelanik/time-mcp:stable
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.time-mcp.rule=Host(`time.example.com`)"
-      - "traefik.http.routers.time-mcp.entrypoints=websecure"
-      - "traefik.http.routers.time-mcp.tls.certresolver=myresolver"
-      - "traefik.http.services.time-mcp.loadbalancer.server.port=8060"
-```
-
-### Multiple Instances for Different Regions
-
-```yaml
-services:
-  time-mcp-utc:
-    image: mekayelanik/time-mcp:stable
-    container_name: time-utc
-    ports:
-      - "8060:8060"
-    environment:
-      - TIME_DEFAULT_TIMEZONE=UTC
-      - TIME_LOCALE=en-US
-      - PORT=8060
-  
-  time-mcp-us:
-    image: mekayelanik/time-mcp:stable
-    container_name: time-us
-    ports:
-      - "8061:8060"
-    environment:
-      - TIME_DEFAULT_TIMEZONE=America/New_York
-      - TIME_LOCALE=en-US
-      - TZ=America/New_York
-      - PORT=8060
-  
-  time-mcp-eu:
-    image: mekayelanik/time-mcp:stable
-    container_name: time-eu
-    ports:
-      - "8062:8060"
-    environment:
-      - TIME_DEFAULT_TIMEZONE=Europe/Paris
-      - TIME_LOCALE=fr-FR
-      - TZ=Europe/Paris
-      - PORT=8060
-```
-
-### Using Environment File
-
-Create `.env` file:
+Verify with [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
 
 ```bash
-TIME_DEFAULT_TIMEZONE=UTC
-TIME_LOCALE=en-US
-PORT=8060
-PROTOCOL=SHTTP
-CORS=https://example.com
-TZ=UTC
+npm install -g @modelcontextprotocol/inspector
+mcp-inspector http://host-ip:8060/mcp
 ```
 
-Then use in docker-compose.yml:
+---
+
+## Network Configuration
+
+### Comparison
+
+| Network Mode | Complexity | Performance | Use Case |
+|:-------------|:----------:|:-----------:|:---------|
+| **Bridge** | ⭐ Easy | ⭐⭐⭐ Good | Default, isolated |
+| **Host** | ⭐⭐ Moderate | ⭐⭐⭐⭐ Excellent | Direct host access |
+| **MACVLAN** | ⭐⭐⭐ Advanced | ⭐⭐⭐⭐ Excellent | Dedicated IP |
+
+---
+
+### Bridge Network (Default)
 
 ```yaml
 services:
   time-mcp:
     image: mekayelanik/time-mcp:stable
-    env_file: .env
     ports:
-      - "${PORT}:${PORT}"
+      - "8060:8060"
+```
+
+**Benefits:** Container isolation, easy setup, works everywhere
+**Access:** `http://localhost:8060/mcp`
+
+---
+
+### Host Network (Linux Only)
+
+```yaml
+services:
+  time-mcp:
+    image: mekayelanik/time-mcp:stable
+    network_mode: host
+```
+
+**Benefits:** Maximum performance, no NAT overhead, no port mapping needed
+**Considerations:** Linux only, shares host network namespace
+**Access:** `http://localhost:8060/mcp`
+
+---
+
+### MACVLAN Network (Advanced)
+
+```yaml
+services:
+  time-mcp:
+    image: mekayelanik/time-mcp:stable
+    mac_address: "AB:BC:CD:DE:EF:01"
+    networks:
+      macvlan-net:
+        ipv4_address: 192.168.1.100
+
+networks:
+  macvlan-net:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
+```
+
+**Benefits:** Dedicated IP, direct LAN access
+**Considerations:** Linux only, requires additional setup
+**Access:** `http://192.168.1.100:8060/mcp`
+
+---
+
+## Updating
+
+### Docker Compose
+
+```bash
+docker compose pull
+docker compose up -d
+docker image prune -f
+```
+
+### Docker CLI
+
+```bash
+docker pull mekayelanik/time-mcp:stable
+docker stop time-mcp && docker rm time-mcp
+# Run your original docker run command
+docker image prune -f
+```
+
+### One-Time Update with Watchtower
+
+```bash
+docker run --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower \
+  --run-once \
+  time-mcp
 ```
 
 ---
@@ -576,269 +434,142 @@ services:
 
 ### Pre-Flight Checklist
 
-- ✅ Docker 23.0+
+- ✅ Docker Engine 23.0+
 - ✅ Port 8060 available
-- ✅ Network connectivity
+- ✅ Sufficient startup time (ARM devices)
 - ✅ Latest stable image
-- ✅ Valid timezone and locale
+- ✅ Correct configuration
 
 ### Common Issues
 
-**Container Won't Start**
+#### Container Won't Start
+
 ```bash
-# Check logs for detailed error
+# Check Docker version
+docker --version
+
+# Verify port availability
+sudo netstat -tulpn | grep 8060
+
+# Check logs
 docker logs time-mcp
-
-# Pull latest image
-docker pull mekayelanik/time-mcp:stable
-
-# Restart container
-docker restart time-mcp
 ```
 
-**Connection Refused**
-```bash
-# Verify container is running
-docker ps | grep time-mcp
-
-# Check port binding
-docker port time-mcp
-
-# Test health endpoint
-curl http://localhost:8060/healthz
-```
-
-**Invalid Timezone Error**
-```yaml
-# Use valid IANA timezone names
-environment:
-  - TIME_DEFAULT_TIMEZONE=UTC  # ✅ Valid
-  # Not: TIME_DEFAULT_TIMEZONE=PST  # ❌ Invalid
-```
-
-**Invalid Locale Error**
-```yaml
-# Use valid locale format (language-COUNTRY or language)
-environment:
-  - TIME_LOCALE=en-US  # ✅ Valid
-  - TIME_LOCALE=en     # ✅ Valid
-  # Not: TIME_LOCALE=English  # ❌ Invalid
-```
-
-**Port Already in Use**
-```bash
-# Check what's using the port
-sudo lsof -i :8060
-
-# Use a different port
-docker run -p 8061:8060 mekayelanik/time-mcp:stable
-```
-
-**CORS Errors**
-```yaml
-# Development - allow all
-environment:
-  - CORS=*
-
-# Production - specific origins
-environment:
-  - CORS=https://yourdomain.com
-```
-
-**Debug Mode**
-```yaml
-# Enable verbose debugging
-environment:
-  - DEBUG_MODE=verbose
-
-# Then check logs
-docker logs -f time-mcp
-```
-
-### Health Check Testing
+#### Permission Errors
 
 ```bash
-# Basic health check
-curl http://localhost:8060/healthz
+# Get your IDs
+id $USER
 
-# Test MCP endpoint
+# Update configuration with correct PUID/PGID
+# Fix volume permissions if needed
+sudo chown -R 1000:1000 /path/to/volume
+```
+
+#### Client Cannot Connect
+
+```bash
+# Test connectivity
 curl http://localhost:8060/mcp
+curl http://host-ip:8060/mcp
+curl -k https://localhost:8060/mcp
+curl -k https://host-ip:8060/mcp
 
-# View running configuration
-docker logs time-mcp | grep "CONFIGURATION"
+# Check firewall
+sudo ufw status
+
+# Verify container
+docker inspect time-mcp | grep IPAddress
 ```
 
-### Validation Messages
+#### Slow ARM Performance
+
+- Wait 30-60 seconds after start
+- Monitor: `docker logs -f time-mcp`
+- Check resources: `docker stats time-mcp`
+- Use faster storage (SSD vs SD card)
+
+### Debug Information
+
+When reporting issues, include:
 
 ```bash
-# ✅ Success messages
-🌍 Default Timezone: UTC
-🌐 Locale: en-US
-🚀 Launching Time MCP Server with protocol: SHTTP/streamableHttp on port: 8060
+# System info
+docker --version && uname -a
 
-# ⚠️ Warning messages
-⚠️  Warning: Invalid TIME_DEFAULT_TIMEZONE: 'PST'
-   Using default: UTC
+# Container logs
+docker logs time-mcp --tail 200 > logs.txt
+
+# Container config
+docker inspect time-mcp > inspect.json
 ```
 
 ---
 
-## Performance Tips
-
-### Optimize for Speed
-
-```yaml
-environment:
-  - TIME_DEFAULT_TIMEZONE=UTC
-  - TIME_LOCALE=en-US
-```
-
-### Resource Limits
-
-```yaml
-deploy:
-  resources:
-    limits:
-      cpus: '0.5'
-      memory: 256M
-    reservations:
-      cpus: '0.25'
-      memory: 128M
-```
-
----
-
-## Security Best Practices
-
-1. **Network Security**
-   - Never use `CORS=*` in production
-   - Use HTTPS with reverse proxy
-   - Implement rate limiting
-
-2. **Container Security**
-   - Run as non-root user (default PUID/PGID)
-   - Keep Docker image updated
-   - Use specific version tags for production
-
-3. **Monitoring**
-   - Set up logging and alerting
-   - Track health check status
-   - Monitor resource usage
-
-4. **Access Control**
-   - Use reverse proxy authentication
-   - Implement IP whitelisting if needed
-   - Monitor access logs
-
----
-
-## Use Case Examples
-
-### Meeting Scheduler
-Configure for global meeting coordination with UTC default and multiple locale support.
-
-**Example queries:**
-- "What time is 3pm EST in all major timezones?"
-- "Convert 9am Tokyo time to New York and London"
-- "Schedule a meeting for 2pm UTC - show in all timezones"
-
-### Event Platform
-Configure for event timing and countdowns with appropriate timezone settings.
-
-**Example queries:**
-- "How many days until December 31, 2024?"
-- "Show relative time for event in 3 hours"
-- "Get timestamp for event start time"
-
-### International Business
-Configure for global business operations with UTC default for consistency.
-
-**Example queries:**
-- "What are business hours in Tokyo when it's 9am in New York?"
-- "Convert deadline from PST to all international offices"
-- "Calculate time difference between Sydney and London"
-
----
-
-## Resources & Support
+## Additional Resources
 
 ### Documentation
-- 📦 [Official NPM Package](https://www.npmjs.com/package/time-mcp)
-- 🐙 [GitHub Repository](https://github.com/yokingma/time-mcp)
-- 📘 [Smithery Listing](https://smithery.ai/server/@yokingma/time-mcp)
-- 🐳 [Docker Hub](https://hub.docker.com/r/mekayelanik/time-mcp)
+- 📚 [Time Official Docs](https://github.com/nicholasgriffintn/time-mcp)
+- 📦 [NPM Package](https://www.npmjs.com/package/time-mcp)
+- 🔧 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)
 
-### Time Resources
-- 🌍 [IANA Time Zone Database](https://www.iana.org/time-zones)
-- 📅 [ISO 8601 Standard](https://en.wikipedia.org/wiki/ISO_8601)
-- ⏰ [World Time Zones](https://www.timeanddate.com/time/zones/)
+### Docker Resources
+- 🐳 [Docker Compose Best Practices](https://docs.docker.com/compose/production/)
+- 🌐 [Docker Networking](https://docs.docker.com/network/)
+- 🛡️ [Docker Security](https://docs.docker.com/engine/security/)
 
-### MCP Resources
-- 📘 [MCP Protocol Specification](https://modelcontextprotocol.io)
-- 🎓 [MCP Documentation](https://modelcontextprotocol.io/docs)
-- 💬 [MCP Community](https://discord.gg/mcp)
+### Monitoring
+- 📊 [Diun - Update Notifier](https://crazymax.dev/diun/)
+- ⚡ [Watchtower](https://containrrr.dev/watchtower/)
+
+---
+
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+  <a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+  </a>
+</p>
+
+## Support & License
 
 ### Getting Help
 
 **Docker Image Issues:**
-- [GitHub Issues](https://github.com/mekayelanik/time-mcp-docker/issues)
-- [Discussions](https://github.com/mekayelanik/time-mcp-docker/discussions)
+- GitHub: [time-mcp-docker/issues](https://github.com/MekayelAnik/time-mcp/issues)
 
-**General Questions:**
-- Check logs: `docker logs time-mcp`
-- Test health: `curl http://localhost:8060/healthz`
-- Visit [Smithery](https://smithery.ai/server/@yokingma/time-mcp)
+**Time MCP Issues:**
+- GitHub: [nicholasgriffintn/time-mcp/issues](https://github.com/nicholasgriffintn/time-mcp/issues)
+- Website: [npmjs.com/package/time-mcp](https://npmjs.com/package/time-mcp/)
 
-### Updating
+### Contributing
 
-```bash
-# Docker Compose
-docker compose pull
-docker compose up -d
+We welcome contributions:
+1. Report bugs via GitHub Issues
+2. Suggest features
+3. Improve documentation
+4. Test beta releases
 
-# Docker CLI
-docker pull mekayelanik/time-mcp:stable
-docker stop time-mcp
-docker rm time-mcp
-# Re-run your docker run command
-```
+### License
 
-### Version Pinning
+GPL License. See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/time-mcp-docker/refs/heads/main/LICENSE) for details.
 
-```yaml
-# Use specific version
-services:
-  time-mcp:
-    image: mekayelanik/time-mcp:1.0.3
-
-# Or use stable tag (recommended)
-services:
-  time-mcp:
-    image: mekayelanik/time-mcp:stable
-```
+Time MCP server has its own license - see [Main NPM repo](https://github.com/nicholasgriffintn/time-mcp).
 
 ---
 
-## License
+### Major Changes
 
-GPL License - See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/time-mcp-docker/refs/heads/main/LICENSE) for details.
+<ul>
+  <li><strong>Initial Release:</strong> Full CI/CD pipeline with HAProxy, HTTPS/TLS, QUIC/HTTP3, API key auth</li>
+</ul>
 
-**Disclaimer:** Unofficial Docker image for [time-mcp](https://www.npmjs.com/package/time-mcp). No API keys or external services required. All time calculations performed locally.
-
----
-
-## Acknowledgments
-
-- Original NPM package by [@yokingma](https://github.com/yokingma)
-- Built with [Model Context Protocol](https://modelcontextprotocol.io)
-- Timezone data from [IANA Time Zone Database](https://www.iana.org/time-zones)
-
----
+<p></p>
 
 <div align="center">
 
-[Report Bug](https://github.com/mekayelanik/time-mcp-docker/issues) • [Request Feature](https://github.com/mekayelanik/time-mcp-docker/issues) • [Contribute](https://github.com/mekayelanik/time-mcp-docker/pulls)
-
-**⭐ Star this project if you find it useful!**
+[⬆ Back to Top](#time-mcp-server)
 
 </div>
