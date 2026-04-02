@@ -73,7 +73,7 @@ Time MCP Server provides time awareness and timezone operation capabilities thro
 |:----|:---------:|:------------|:---------|
 | `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
 | `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
-| `1.0.21` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `1.0.6` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
 | `beta` | ⚠️ | Beta releases | **Testing only** |
 
 ### System Requirements
